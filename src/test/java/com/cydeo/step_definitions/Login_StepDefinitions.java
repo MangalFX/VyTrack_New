@@ -3,6 +3,7 @@ package com.cydeo.step_definitions;
 import com.cydeo.pages.Login_Page;
 import com.cydeo.utilites.ConfigReader;
 import com.cydeo.utilites.Driver;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,18 +17,10 @@ public class Login_StepDefinitions {
 
 
 
-    Login_Page loginPage = new Login_Page();
-
-
-    @Given("user is on the login page")
-    public void user_is_on_the_login_page() {
-        Driver.getDriver().get(ConfigReader.getProperty("env1"));
-    }
 
 
     @When("user enters the {string} information")
     public void user_enters_the_information(String DriverUsername) {
-        loginPage.login(ConfigReader.getProperty("driver"),ConfigReader.getProperty("password"));
 
 
     }
